@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fire Extinguisher Health Checkup Audit Report Tool for technicians and engineers">
+    <meta name="keywords" content="fire safety, extinguisher audit, fire inspection, safety checklist, fire protection">
+    <title>Fire Extinguisher Health Checkup Audit Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6687860250561653" crossorigin="anonymous"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-376208036"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-376208036');
+    </script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Fire Extinguisher Health Checkup Audit Tool",
+        "description": "Professional tool for fire extinguisher health checkup and audit reporting",
+        "url": "https://firesafetytool.com/fire-extinguisher-audit",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "author": {
+            "@type": "Organization",
+            "name": "Fire Safety Tools"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-fire-extinguisher"></i>
+                    <h1>Fire Extinguisher Health Checkup Audit Tool</h1>
+                </div>
+                <div class="header-actions">
+                    <button id="printBtn" class="btn btn-secondary">
+                        <i class="fas fa-print"></i> Print Report
+                    </button>
+                    <button id="exportBtn" class="btn btn-secondary">
+                        <i class="fas fa-file-export"></i> Export PDF
+                    </button>
+                </div>
+            </div>
+            <p class="tagline">Streamline your fire safety inspections with automated audit reporting</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="app-container">
+            <!-- Audit Form Section -->
+            <section class="audit-form-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-clipboard-check"></i> Fire Extinguisher Audit Form</h2>
+                    <p>Fill in the details below to generate your comprehensive audit report</p>
+                </div>
+
+                <div class="form-grid">
+                    <!-- Basic Information -->
+                    <div class="form-card basic-info">
+                        <h3><i class="fas fa-building"></i> Basic Information</h3>
+                        <div class="form-group">
+                            <label for="accountName">Name of Account / Company</label>
+                            <input type="text" id="accountName" placeholder="Enter company name">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea id="address" rows="2" placeholder="Enter complete address"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="auditDate">Date of Audit</label>
+                                <input type="date" id="auditDate" value="">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactPerson">Contact Person</label>
+                                <input type="text" id="contactPerson" placeholder="Name of contact person">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactDetails">Contact Details</label>
+                            <input type="text" id="contactDetails" placeholder="Phone & Email">
+                        </div>
+                    </div>
+
+                    <!-- Extinguisher Details -->
+                    <div class="form-card extinguisher-details">
+                        <h3><i class="fas fa-fire-extinguisher"></i> Fire Extinguisher Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="extinguisherType">Type</label>
+                                <select id="extinguisherType">
+                                    <option value="">Select Type</option>
+                                    <option value="CM-Map 90">CM-Map 90</option>
+                                    <option value="CM-Clean Agent">CM-Clean Agent</option>
+                                    <option value="CO2">CO2 Extinguisher</option>
+                                    <option value="Foam">Foam Extinguisher</option>
+                                    <option value="Water">Water Extinguisher</option>
+                                    <option value="Dry Powder">Dry Powder</option>
+                                    <option value="Wet Chemical">Wet Chemical</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="capacity">Capacity</label>
+                                <select id="capacity">
+                                    <option value="">Select Capacity</option>
+                                    <option value="1 Kg">1 Kg</option>
+                                    <option value="2 Kg">2 Kg</option>
+                                    <option value="5 Kg">5 Kg</option>
+                                    <option value="6 Kg">6 Kg</option>
+                                    <option value="9 Kg">9 Kg</option>
+                                    <option value="25 Kg">25 Kg</option>
+                                    <option value="50 Kg">50 Kg</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="quantity">Quantity</label>
+                                <input type="number" id="quantity" min="1" value="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="brand">Brand</label>
+                                <input type="text" id="brand" placeholder="Brand name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="installationDate">Installation Date</label>
+                                <input type="date" id="installationDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="expiryDate">Expiry / Next Refill Date</label>
+                                <input type="date" id="expiryDate">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location / Area</label>
+                            <input type="text" id="location" placeholder="e.g., Main Hall, Kitchen, Server Room">
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select id="status">
+                                <option value="Good">Good</option>
+                                <option value="Needs Service">Needs Service</option>
+                                <option value="Expired">Expired</option>
+                                <option value="Missing">Missing</option>
+                                <option value="Damaged">Damaged</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Hazard Assessment -->
+                    <div class="form-card hazard-assessment">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Hazard Assessment</h3>
+                        <div class="hazard-checkboxes">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="hazardA"> Class A (Ordinary Combustibles)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="hazardB"> Class B (Flammable Liquids)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="hazardC"> Class C (Electrical Equipment)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="hazardD"> Class D (Combustible Metals)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="hazardK"> Class K (Cooking Oils)
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="areaType">Area Type</label>
+                            <select id="areaType">
+                                <option value="">Select Area Type</option>
+                                <option value="Office">Office Area</option>
+                                <option value="Kitchen">Kitchen</option>
+                                <option value="Server Room">Server Room</option>
+                                <option value="Workshop">Workshop</option>
+                                <option value="Warehouse">Warehouse</option>
+                                <option value="Laboratory">Laboratory</option>
+                                <option value="Manufacturing">Manufacturing Area</option>
+                                <option value="Public Area">Public Area</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="trafficLevel">Human Traffic Level</label>
+                            <select id="trafficLevel">
+                                <option value="High">High Traffic</option>
+                                <option value="Medium">Medium Traffic</option>
+                                <option value="Low">Low Traffic</option>
+                                <option value="Unmanned">Unmanned Area</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="remarks">Remarks / Recommendations</label>
+                            <textarea id="remarks" rows="3" placeholder="Add specific recommendations or observations"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="form-card actions-card">
+                        <h3><i class="fas fa-cogs"></i> Actions</h3>
+                        <div class="action-buttons">
+                            <button id="addExtinguisherBtn" class="btn btn-primary">
+                                <i class="fas fa-plus-circle"></i> Add Extinguisher to List
+                            </button>
+                            <button id="clearFormBtn" class="btn btn-secondary">
+                                <i class="fas fa-eraser"></i> Clear Form
+                            </button>
+                            <button id="generateReportBtn" class="btn btn-success">
+                                <i class="fas fa-file-alt"></i> Generate Complete Report
+                            </button>
+                            <button id="loadSampleBtn" class="btn btn-info">
+                                <i class="fas fa-vial"></i> Load Sample Data
+                            </button>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-info-circle"></i> Instructions:</h4>
+                            <ol>
+                                <li>Fill in all required details</li>
+                                <li>Click "Add Extinguisher" for each extinguisher</li>
+                                <li>Review the list below</li>
+                                <li>Generate final report</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Extinguisher List Section -->
+            <section class="extinguisher-list-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-list-alt"></i> Extinguisher List</h2>
+                    <p>Total Items: <span id="totalCount">0</span></p>
+                </div>
+                <div class="table-responsive">
+                    <table id="extinguisherTable">
+                        <thead>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Location</th>
+                                <th>Type</th>
+                                <th>Brand</th>
+                                <th>Capacity</th>
+                                <th>Qty</th>
+                                <th>Install Date</th>
+                                <th>Expiry Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="extinguisherTableBody">
+                            <!-- Data will be inserted here dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-actions">
+                    <button id="clearListBtn" class="btn btn-danger">
+                        <i class="fas fa-trash-alt"></i> Clear All Items
+                    </button>
+                    <button id="exportListBtn" class="btn btn-secondary">
+                        <i class="fas fa-download"></i> Export as CSV
+                    </button>
+                </div>
+            </section>
+
+            <!-- Report Preview Section -->
+            <section class="report-preview-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-file-pdf"></i> Report Preview</h2>
+                    <div class="report-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">Total Extinguishers:</span>
+                            <span class="summary-value" id="previewTotal">0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Good Condition:</span>
+                            <span class="summary-value" id="previewGood">0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Need Attention:</span>
+                            <span class="summary-value" id="previewAttention">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-content" id="reportPreview">
+                    <div class="report-header">
+                        <h3>FIRE ASSESSMENT & SOLUTION REPORT</h3>
+                        <div class="report-meta">
+                            <p><strong>NAME OF ACCOUNT:</strong> <span id="reportAccountName">-</span></p>
+                            <p><strong>ADDRESS:</strong> <span id="reportAddress">-</span></p>
+                            <p><strong>DATE:</strong> <span id="reportDate">-</span></p>
+                            <p><strong>CONTACT PERSON:</strong> <span id="reportContact">-</span></p>
+                        </div>
+                    </div>
+                    <div class="report-details">
+                        <p>Report will be generated here based on your input...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Additional Resources Section -->
+            <section class="resources-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-tools"></i> Explore More Calculators & Tools</h2>
+                    <p>We highly recommend these expert resources for specialized safety and utility tools:</p>
+                </div>
+                
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3>Fire Safety Tools</h3>
+                        <p>Comprehensive fire safety calculators, risk assessment tools, and compliance checkers for professionals.</p>
+                        <a href="https://www.firesafetytool.com" target="_blank" class="resource-link">
+                            Visit Site <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <h3>HSE Calculator</h3>
+                        <p>Health, Safety, and Environment calculators for workplace safety compliance and risk management.</p>
+                        <a href="https://www.hsecalculator.com" target="_blank" class="resource-link">
+                            Visit Site <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Web Tools Daily</h3>
+                        <p>Collection of useful web tools, converters, calculators, and utilities for daily tasks.</p>
+                        <a href="https://www.webtoolsdaily.com" target="_blank" class="resource-link">
+                            Visit Site <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Amazon Associates Button -->
+                <div class="amazon-section">
+                    <h3><i class="fab fa-amazon"></i> Special Offer</h3>
+                    <p>Check out our recommended fire safety equipment and tools:</p>
+                    <a href="https://amzn.to/4p8ceG6" target="_blank" class="amazon-btn">
+                        <i class="fas fa-tag"></i> Clearence Sale Store - Upto 70% All Day
+                    </a>
+                </div>
+                
+                <!-- Buy Me a Coffee Button -->
+                <div class="coffee-section">
+                    <h3><i class="fas fa-coffee"></i> Support This Tool</h3>
+                    <p>If you find this tool helpful, consider supporting our work:</p>
+                    <a href="https://buymeacoffee.com/s.amjathkhan" target="_blank" class="coffee-btn">
+                        <i class="fas fa-mug-hot"></i> Buy Me a Coffee
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About This Tool</h4>
+                    <p>This Fire Extinguisher Health Checkup Audit Tool helps technicians and engineers streamline their fire safety inspections and generate professional reports efficiently.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#" id="backToTop"><i class="fas fa-arrow-up"></i> Back to Top</a></li>
+                        <li><a href="#" id="printGuide"><i class="fas fa-print"></i> Printing Guide</a></li>
+                        <li><a href="#" id="contactSupport"><i class="fas fa-headset"></i> Contact Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Compliance Standards</h4>
+                    <p>This tool helps comply with NFPA 10, OSHA, and local fire safety regulations for fire extinguisher maintenance and inspection.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fire Extinguisher Audit Tool. All rights reserved. | 
+                    <a href="#" id="privacyPolicy">Privacy Policy</a> | 
+                    <a href="#" id="termsOfUse">Terms of Use</a>
+                </p>
+                <div class="footer-disclaimer">
+                    <p><i class="fas fa-exclamation-circle"></i> <strong>Disclaimer:</strong> This tool is for guidance only. Always consult with certified fire safety professionals for official inspections.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-icon success">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Success!</h3>
+            <p id="successMessage">Extinguisher added successfully!</p>
+            <button class="btn btn-primary" id="modalOkBtn">OK</button>
+        </div>
+    </div>
+
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-icon warning">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h3>Confirm Action</h3>
+            <p id="confirmMessage">Are you sure you want to proceed?</p>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" id="modalCancelBtn">Cancel</button>
+                <button class="btn btn-danger" id="modalConfirmBtn">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
