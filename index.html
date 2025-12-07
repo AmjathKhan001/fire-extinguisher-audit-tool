@@ -8,7 +8,6 @@
     <title>Fire Extinguisher Health Checkup Audit Tool</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
@@ -71,48 +70,96 @@
     <!-- Main Content -->
     <main class="container">
         <div class="app-container">
+            <!-- Form Navigation -->
+            <section class="form-navigation">
+                <div class="nav-steps">
+                    <div class="nav-step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Basic Info</div>
+                    </div>
+                    <div class="nav-step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Extinguisher Details</div>
+                    </div>
+                    <div class="nav-step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Hazard Assessment</div>
+                    </div>
+                    <div class="nav-step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Review & Add</div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Audit Form Section -->
             <section class="audit-form-section">
-                <div class="section-header">
-                    <h2><i class="fas fa-clipboard-check"></i> Fire Extinguisher Audit Form</h2>
-                    <p>Fill in the details below to generate your comprehensive audit report</p>
-                </div>
-
-                <div class="form-grid">
-                    <!-- Basic Information -->
-                    <div class="form-card basic-info">
-                        <h3><i class="fas fa-building"></i> Basic Information</h3>
-                        <div class="form-group">
-                            <label for="accountName">Name of Account / Company</label>
-                            <input type="text" id="accountName" placeholder="Enter company name">
+                <div class="form-container">
+                    <!-- Step 1: Basic Information -->
+                    <div class="form-step active" id="step1">
+                        <div class="step-header">
+                            <h2><i class="fas fa-building"></i> Basic Information</h2>
+                            <p>Enter the company details and contact information</p>
                         </div>
-                        <div class="form-group">
-                            <label for="address">Address</label>
-                            <textarea id="address" rows="2" placeholder="Enter complete address"></textarea>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="auditDate">Date of Audit</label>
-                                <input type="date" id="auditDate" value="">
+                        
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label for="accountName">Name of Account / Company *</label>
+                                <input type="text" id="accountName" placeholder="Enter company name" required>
                             </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="address">Address *</label>
+                                <textarea id="address" rows="3" placeholder="Enter complete address" required></textarea>
+                            </div>
+                            
                             <div class="form-group">
-                                <label for="contactPerson">Contact Person</label>
-                                <input type="text" id="contactPerson" placeholder="Name of contact person">
+                                <label for="auditDate">Date of Audit *</label>
+                                <input type="date" id="auditDate" value="" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactPerson">Contact Person *</label>
+                                <input type="text" id="contactPerson" placeholder="Name of contact person" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactPhone">Phone Number</label>
+                                <input type="tel" id="contactPhone" placeholder="(123) 456-7890">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address</label>
+                                <input type="email" id="contactEmail" placeholder="contact@company.com">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="contactDetails">Contact Details</label>
-                            <input type="text" id="contactDetails" placeholder="Phone & Email">
+                        
+                        <div class="step-actions">
+                            <button class="btn btn-secondary" id="skipBasicBtn">
+                                <i class="fas fa-forward"></i> Skip for Now
+                            </button>
+                            <button class="btn btn-primary" id="nextToStep2">
+                                Next <i class="fas fa-arrow-right"></i>
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Extinguisher Details -->
-                    <div class="form-card extinguisher-details">
-                        <h3><i class="fas fa-fire-extinguisher"></i> Fire Extinguisher Details</h3>
-                        <div class="form-row">
+                    <!-- Step 2: Fire Extinguisher Details -->
+                    <div class="form-step" id="step2">
+                        <div class="step-header">
+                            <h2><i class="fas fa-fire-extinguisher"></i> Fire Extinguisher Details</h2>
+                            <p>Enter details about the fire extinguisher being audited</p>
+                        </div>
+                        
+                        <div class="form-grid">
                             <div class="form-group">
-                                <label for="extinguisherType">Type</label>
-                                <select id="extinguisherType">
+                                <label for="location">Location / Area *</label>
+                                <input type="text" id="location" placeholder="e.g., Main Hall, Kitchen, Server Room" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="extinguisherType">Type *</label>
+                                <select id="extinguisherType" required>
                                     <option value="">Select Type</option>
                                     <option value="CM-Map 90">CM-Map 90</option>
                                     <option value="CM-Clean Agent">CM-Clean Agent</option>
@@ -123,9 +170,15 @@
                                     <option value="Wet Chemical">Wet Chemical</option>
                                 </select>
                             </div>
+                            
                             <div class="form-group">
-                                <label for="capacity">Capacity</label>
-                                <select id="capacity">
+                                <label for="brand">Brand</label>
+                                <input type="text" id="brand" placeholder="Brand name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="capacity">Capacity *</label>
+                                <select id="capacity" required>
                                     <option value="">Select Capacity</option>
                                     <option value="1 Kg">1 Kg</option>
                                     <option value="2 Kg">2 Kg</option>
@@ -136,117 +189,297 @@
                                     <option value="50 Kg">50 Kg</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="form-row">
+                            
                             <div class="form-group">
-                                <label for="quantity">Quantity</label>
-                                <input type="number" id="quantity" min="1" value="1">
+                                <label for="quantity">Quantity *</label>
+                                <input type="number" id="quantity" min="1" value="1" required>
                             </div>
+                            
                             <div class="form-group">
-                                <label for="brand">Brand</label>
-                                <input type="text" id="brand" placeholder="Brand name">
+                                <label for="serialNumber">Serial Number / ID</label>
+                                <input type="text" id="serialNumber" placeholder="Optional serial number">
                             </div>
-                        </div>
-                        <div class="form-row">
+                            
                             <div class="form-group">
                                 <label for="installationDate">Installation Date</label>
                                 <input type="date" id="installationDate">
                             </div>
+                            
                             <div class="form-group">
-                                <label for="expiryDate">Expiry / Next Refill Date</label>
-                                <input type="date" id="expiryDate">
+                                <label for="expiryDate">Expiry / Next Refill Date *</label>
+                                <input type="date" id="expiryDate" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="status">Current Status *</label>
+                                <select id="status" required>
+                                    <option value="Good">Good</option>
+                                    <option value="Needs Service">Needs Service</option>
+                                    <option value="Expired">Expired</option>
+                                    <option value="Missing">Missing</option>
+                                    <option value="Damaged">Damaged</option>
+                                    <option value="Not Accessible">Not Accessible</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="extinguisherRemarks">Remarks</label>
+                                <textarea id="extinguisherRemarks" rows="3" placeholder="Any specific observations about this extinguisher"></textarea>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="location">Location / Area</label>
-                            <input type="text" id="location" placeholder="e.g., Main Hall, Kitchen, Server Room">
-                        </div>
-                        <div class="form-group">
-                            <label for="status">Status</label>
-                            <select id="status">
-                                <option value="Good">Good</option>
-                                <option value="Needs Service">Needs Service</option>
-                                <option value="Expired">Expired</option>
-                                <option value="Missing">Missing</option>
-                                <option value="Damaged">Damaged</option>
-                            </select>
+                        
+                        <div class="step-actions">
+                            <button class="btn btn-secondary" id="backToStep1">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                            <button class="btn btn-primary" id="nextToStep3">
+                                Next <i class="fas fa-arrow-right"></i>
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Hazard Assessment -->
-                    <div class="form-card hazard-assessment">
-                        <h3><i class="fas fa-exclamation-triangle"></i> Hazard Assessment</h3>
-                        <div class="hazard-checkboxes">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="hazardA"> Class A (Ordinary Combustibles)
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="hazardB"> Class B (Flammable Liquids)
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="hazardC"> Class C (Electrical Equipment)
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="hazardD"> Class D (Combustible Metals)
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="hazardK"> Class K (Cooking Oils)
-                            </label>
+                    <!-- Step 3: Hazard Assessment -->
+                    <div class="form-step" id="step3">
+                        <div class="step-header">
+                            <h2><i class="fas fa-exclamation-triangle"></i> Hazard Assessment</h2>
+                            <p>Assess the fire hazards in the area where the extinguisher is located</p>
                         </div>
-                        <div class="form-group">
-                            <label for="areaType">Area Type</label>
-                            <select id="areaType">
-                                <option value="">Select Area Type</option>
-                                <option value="Office">Office Area</option>
-                                <option value="Kitchen">Kitchen</option>
-                                <option value="Server Room">Server Room</option>
-                                <option value="Workshop">Workshop</option>
-                                <option value="Warehouse">Warehouse</option>
-                                <option value="Laboratory">Laboratory</option>
-                                <option value="Manufacturing">Manufacturing Area</option>
-                                <option value="Public Area">Public Area</option>
-                            </select>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="areaType">Area Type *</label>
+                                <select id="areaType" required>
+                                    <option value="">Select Area Type</option>
+                                    <option value="Office">Office Area</option>
+                                    <option value="Kitchen">Kitchen</option>
+                                    <option value="Server Room">Server Room</option>
+                                    <option value="Workshop">Workshop</option>
+                                    <option value="Warehouse">Warehouse</option>
+                                    <option value="Laboratory">Laboratory</option>
+                                    <option value="Manufacturing">Manufacturing Area</option>
+                                    <option value="Public Area">Public Area</option>
+                                    <option value="Parking">Parking Area</option>
+                                    <option value="Electrical Room">Electrical Room</option>
+                                    <option value="Storage">Storage Room</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="trafficLevel">Human Traffic Level</label>
+                                <select id="trafficLevel">
+                                    <option value="High">High Traffic</option>
+                                    <option value="Medium" selected>Medium Traffic</option>
+                                    <option value="Low">Low Traffic</option>
+                                    <option value="Unmanned">Unmanned Area</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label>Fire Hazard Classes Present *</label>
+                                <div class="hazard-checkboxes">
+                                    <div class="hazard-row">
+                                        <label class="hazard-option">
+                                            <input type="checkbox" id="hazardA" value="Class A">
+                                            <div class="hazard-content">
+                                                <div class="hazard-icon">
+                                                    <i class="fas fa-tree"></i>
+                                                </div>
+                                                <div class="hazard-text">
+                                                    <strong>Class A</strong>
+                                                    <span>Ordinary Combustibles<br>(Wood, Paper, Cloth)</span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        
+                                        <label class="hazard-option">
+                                            <input type="checkbox" id="hazardB" value="Class B">
+                                            <div class="hazard-content">
+                                                <div class="hazard-icon">
+                                                    <i class="fas fa-oil-can"></i>
+                                                </div>
+                                                <div class="hazard-text">
+                                                    <strong>Class B</strong>
+                                                    <span>Flammable Liquids<br>(Gas, Oil, Paint)</span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        
+                                        <label class="hazard-option">
+                                            <input type="checkbox" id="hazardC" value="Class C">
+                                            <div class="hazard-content">
+                                                <div class="hazard-icon">
+                                                    <i class="fas fa-bolt"></i>
+                                                </div>
+                                                <div class="hazard-text">
+                                                    <strong>Class C</strong>
+                                                    <span>Electrical Equipment<br>(Appliances, Wiring)</span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="hazard-row">
+                                        <label class="hazard-option">
+                                            <input type="checkbox" id="hazardD" value="Class D">
+                                            <div class="hazard-content">
+                                                <div class="hazard-icon">
+                                                    <i class="fas fa-industry"></i>
+                                                </div>
+                                                <div class="hazard-text">
+                                                    <strong>Class D</strong>
+                                                    <span>Combustible Metals<br>(Magnesium, Titanium)</span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        
+                                        <label class="hazard-option">
+                                            <input type="checkbox" id="hazardK" value="Class K">
+                                            <div class="hazard-content">
+                                                <div class="hazard-icon">
+                                                    <i class="fas fa-utensils"></i>
+                                                </div>
+                                                <div class="hazard-text">
+                                                    <strong>Class K</strong>
+                                                    <span>Cooking Oils & Fats<br>(Kitchen Fires)</span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="hazardDescription">Hazard Description</label>
+                                <textarea id="hazardDescription" rows="3" placeholder="Describe specific fire hazards in this area..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="recommendedType">Recommended Extinguisher Type</label>
+                                <select id="recommendedType">
+                                    <option value="">Auto-select based on hazards</option>
+                                    <option value="CM-Map 90">CM-Map 90 (Multi-purpose)</option>
+                                    <option value="CO2">CO2 (Electrical/Flammable Liquids)</option>
+                                    <option value="Foam">Foam (Flammable Liquids)</option>
+                                    <option value="Dry Powder">Dry Powder (Multi-purpose)</option>
+                                    <option value="Wet Chemical">Wet Chemical (Kitchen)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="riskLevel">Risk Level</label>
+                                <select id="riskLevel">
+                                    <option value="Low">Low Risk</option>
+                                    <option value="Medium" selected>Medium Risk</option>
+                                    <option value="High">High Risk</option>
+                                    <option value="Critical">Critical Risk</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="hazardRemarks">Assessment Remarks</label>
+                                <textarea id="hazardRemarks" rows="3" placeholder="Additional assessment notes and recommendations..."></textarea>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="trafficLevel">Human Traffic Level</label>
-                            <select id="trafficLevel">
-                                <option value="High">High Traffic</option>
-                                <option value="Medium">Medium Traffic</option>
-                                <option value="Low">Low Traffic</option>
-                                <option value="Unmanned">Unmanned Area</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="remarks">Remarks / Recommendations</label>
-                            <textarea id="remarks" rows="3" placeholder="Add specific recommendations or observations"></textarea>
+                        
+                        <div class="step-actions">
+                            <button class="btn btn-secondary" id="backToStep2">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                            <button class="btn btn-primary" id="nextToStep4">
+                                Next <i class="fas fa-arrow-right"></i>
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Actions -->
-                    <div class="form-card actions-card">
-                        <h3><i class="fas fa-cogs"></i> Actions</h3>
-                        <div class="action-buttons">
-                            <button id="addExtinguisherBtn" class="btn btn-primary">
-                                <i class="fas fa-plus-circle"></i> Add Extinguisher to List
-                            </button>
-                            <button id="clearFormBtn" class="btn btn-secondary">
-                                <i class="fas fa-eraser"></i> Clear Form
-                            </button>
-                            <button id="generateReportBtn" class="btn btn-success">
-                                <i class="fas fa-file-alt"></i> Generate Complete Report
-                            </button>
-                            <button id="loadSampleBtn" class="btn btn-info">
-                                <i class="fas fa-vial"></i> Load Sample Data
-                            </button>
+                    <!-- Step 4: Review & Add -->
+                    <div class="form-step" id="step4">
+                        <div class="step-header">
+                            <h2><i class="fas fa-clipboard-check"></i> Review & Add Extinguisher</h2>
+                            <p>Review all details before adding to the audit list</p>
                         </div>
-                        <div class="instructions">
-                            <h4><i class="fas fa-info-circle"></i> Instructions:</h4>
-                            <ol>
-                                <li>Fill in all required details</li>
-                                <li>Click "Add Extinguisher" for each extinguisher</li>
-                                <li>Review the list below</li>
-                                <li>Generate final report</li>
-                            </ol>
+                        
+                        <div class="review-summary">
+                            <div class="review-section">
+                                <h3><i class="fas fa-building"></i> Basic Information</h3>
+                                <div class="review-grid">
+                                    <div class="review-item">
+                                        <span class="review-label">Company:</span>
+                                        <span class="review-value" id="reviewCompany">-</span>
+                                    </div>
+                                    <div class="review-item">
+                                        <span class="review-label">Address:</span>
+                                        <span class="review-value" id="reviewAddress">-</span>
+                                    </div>
+                                    <div class="review-item">
+                                        <span class="review-label">Contact:</span>
+                                        <span class="review-value" id="reviewContact">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="review-section">
+                                <h3><i class="fas fa-fire-extinguisher"></i> Extinguisher Details</h3>
+                                <div class="review-grid">
+                                    <div class="review-item">
+                                        <span class="review-label">Location:</span>
+                                        <span class="review-value" id="reviewLocation">-</span>
+                                    </div>
+                                    <div class="review-item">
+                                        <span class="review-label">Type:</span>
+                                        <span class="review-value" id="reviewType">-</span>
+                                    </div>
+                                    <div class="review-item">
+                                        <span class="review-label">Capacity:</span>
+                                        <span class="review-value" id="reviewCapacity">-</span>
+                                    </div>
+                                    <div class="review-item">
+                                        <span class="review-label">Quantity:</span>
+                                        <span class="review-value" id="reviewQuantity">-</span>
+                                    </div>
+                                    <div class="review-item">
+                                        <span class="review-label">Status:</span>
+                                        <span class="review-value" id="reviewStatus">-</span>
+                                    </div>
+                                    <div class="review-item">
+                                        <span class="review-label">Expiry:</span>
+                                        <span class="review-value" id="reviewExpiry">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="review-section">
+                                <h3><i class="fas fa-exclamation-triangle"></i> Hazard Assessment</h3>
+                                <div class="review-grid">
+                                    <div class="review-item">
+                                        <span class="review-label">Area Type:</span>
+                                        <span class="review-value" id="reviewAreaType">-</span>
+                                    </div>
+                                    <div class="review-item">
+                                        <span class="review-label">Hazard Classes:</span>
+                                        <span class="review-value" id="reviewHazards">-</span>
+                                    </div>
+                                    <div class="review-item">
+                                        <span class="review-label">Risk Level:</span>
+                                        <span class="review-value" id="reviewRiskLevel">-</span>
+                                    </div>
+                                    <div class="review-item full-width">
+                                        <span class="review-label">Remarks:</span>
+                                        <span class="review-value" id="reviewRemarks">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-actions">
+                            <button class="btn btn-secondary" id="backToStep3">
+                                <i class="fas fa-arrow-left"></i> Back to Edit
+                            </button>
+                            <button class="btn btn-success" id="addToAuditBtn">
+                                <i class="fas fa-plus-circle"></i> Add to Audit List
+                            </button>
+                            <button class="btn btn-primary" id="addAndNewBtn">
+                                <i class="fas fa-plus"></i> Add & Start New
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -255,9 +488,14 @@
             <!-- Extinguisher List Section -->
             <section class="extinguisher-list-section">
                 <div class="section-header">
-                    <h2><i class="fas fa-list-alt"></i> Extinguisher List</h2>
-                    <p>Total Items: <span id="totalCount">0</span></p>
+                    <h2><i class="fas fa-list-alt"></i> Audit List</h2>
+                    <div class="list-summary">
+                        <span>Total Items: <strong id="totalCount">0</strong></span>
+                        <span>Total Quantity: <strong id="totalQuantity">0</strong></span>
+                        <span>Needs Attention: <strong id="attentionCount">0</strong></span>
+                    </div>
                 </div>
+                
                 <div class="table-responsive">
                     <table id="extinguisherTable">
                         <thead>
@@ -265,12 +503,11 @@
                                 <th>S.No</th>
                                 <th>Location</th>
                                 <th>Type</th>
-                                <th>Brand</th>
                                 <th>Capacity</th>
                                 <th>Qty</th>
-                                <th>Install Date</th>
-                                <th>Expiry Date</th>
                                 <th>Status</th>
+                                <th>Expiry Date</th>
+                                <th>Risk Level</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -279,18 +516,25 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="table-actions">
+                
+                <div class="list-actions">
+                    <button id="generateReportBtn" class="btn btn-primary">
+                        <i class="fas fa-file-alt"></i> Generate Complete Report
+                    </button>
                     <button id="clearListBtn" class="btn btn-danger">
                         <i class="fas fa-trash-alt"></i> Clear All Items
                     </button>
                     <button id="exportListBtn" class="btn btn-secondary">
                         <i class="fas fa-download"></i> Export as CSV
                     </button>
+                    <button id="loadSampleBtn" class="btn btn-info">
+                        <i class="fas fa-vial"></i> Load Sample Data
+                    </button>
                 </div>
             </section>
 
             <!-- Report Preview Section -->
-            <section class="report-preview-section">
+            <section class="report-preview-section" id="reportSection">
                 <div class="section-header">
                     <h2><i class="fas fa-file-pdf"></i> Report Preview</h2>
                     <div class="report-summary">
@@ -308,6 +552,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="report-content" id="reportPreview">
                     <div class="report-header">
                         <h3>FIRE ASSESSMENT & SOLUTION REPORT</h3>
@@ -318,8 +563,9 @@
                             <p><strong>CONTACT PERSON:</strong> <span id="reportContact">-</span></p>
                         </div>
                     </div>
+                    
                     <div class="report-details">
-                        <p>Report will be generated here based on your input...</p>
+                        <p class="no-data">No audit data available. Please add extinguishers and generate a report.</p>
                     </div>
                 </div>
             </section>
