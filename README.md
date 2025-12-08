@@ -4,19 +4,20 @@ A professional web application for technicians and engineers to streamline fire 
 
 ## Features
 
-- **User-Friendly Interface**: Clean, modern design with intuitive navigation
-- **Complete Audit Forms**: Capture all necessary fire extinguisher details
-- **Real-time Reporting**: Generate instant audit reports
-- **Multiple Export Options**: PDF, CSV, and print support
-- **Sample Data**: Pre-loaded sample data for testing
+- **Comprehensive Database**: 167+ fire extinguisher types with search functionality
+- **Step-by-Step Process**: 4-step guided audit process
+- **Professional Reports**: Generate PDF and CSV reports
+- **Search Functionality**: Type 2-3 letters to find extinguishers
+- **Recommendation System**: Suggest replacements/additions
 - **Local Storage**: Data automatically saved in browser
 - **Mobile Responsive**: Works on all devices
-- **PWA Support**: Installable as a web app
-- **Integration Ready**: Google Analytics, AdSense, and affiliate links
+- **Multiple Export Options**: PDF, CSV, and print support
+- **Legal Compliance**: Privacy policy, terms of use, affiliate disclosure
 
 ## Setup Instructions
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/yourusername/fire-extinguisher-audit-tool.git
-   cd fire-extinguisher-audit-tool
+1. **Clone/Download the files**
+2. **Deploy to any web server** (Vercel, Netlify, GitHub Pages, etc.)
+3. **No database required** - runs entirely in browser
+
+## File Structure
