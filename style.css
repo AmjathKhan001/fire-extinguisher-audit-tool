@@ -1,5 +1,4 @@
-[file name]: style.css
-[file content begin]
+/* Fire Extinguisher Audit Tool - Style.css */
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -217,7 +216,6 @@ header {
     font-size: 0.8rem;
 }
 
-/* Print/Save PDF Button */
 .btn-print {
     background-color: #6c757d;
     color: white;
@@ -1094,125 +1092,6 @@ footer {
     color: var(--primary-color);
 }
 
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1001;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background: white;
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    max-width: 600px;
-    width: 90%;
-    max-height: 80vh;
-    overflow-y: auto;
-    position: relative;
-    animation: modalSlideIn 0.3s ease;
-}
-
-@keyframes modalSlideIn {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.close-modal {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--gray-medium);
-}
-
-.modal-icon {
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.modal-icon.success {
-    color: var(--success-color);
-}
-
-.modal-icon.warning {
-    color: var(--warning-color);
-}
-
-.modal-content h3 {
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.modal-content p {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.modal-buttons {
-    display: flex;
-    gap: 0.75rem;
-    justify-content: center;
-}
-
-/* Legal Modals */
-.legal-modal .modal-content {
-    max-width: 800px;
-}
-
-.legal-modal .modal-header {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid var(--gray-light);
-}
-
-.legal-modal .modal-header h3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 0;
-}
-
-.legal-modal .modal-body {
-    padding: 1rem 0;
-}
-
-.legal-modal .modal-body h4 {
-    color: var(--primary-color);
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.legal-modal .modal-body p {
-    text-align: left;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    color: var(--gray-dark);
-    line-height: 1.6;
-}
-
-.legal-modal .modal-body h4:first-child {
-    margin-top: 0;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
@@ -1331,11 +1210,6 @@ footer {
         gap: 0.75rem;
     }
     
-    .modal-content {
-        padding: 1.5rem;
-        margin: 1rem;
-    }
-    
     .social-links {
         justify-content: center;
     }
@@ -1367,4 +1241,3 @@ footer {
         margin: 0;
     }
 }
-[file content end]
